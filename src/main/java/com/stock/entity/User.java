@@ -24,11 +24,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @EntityListeners(AuditingEntityListener.class)
 @Table(name = "user")
 public class User {
-//	@GeneratedValue(strategy= GenerationType.AUTO, generator = "system-uuid")
-//	@GenericGenerator(name = "system-uuid", strategy = "uuid2")
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	private String id;
+	private long id;
 
 	@Column(name = "user_name", length = 20)
 	@NotNull
@@ -63,11 +61,11 @@ public class User {
     @Enumerated(EnumType.STRING)
 	private UserType userType;//role define: ADMIN/USER
 
-	public String getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
