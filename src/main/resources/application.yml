@@ -1,7 +1,7 @@
-#eureka:
-#  client:
-#    serviceUrl:
-#      defaultZone: http://localhost:3001/eureka/
+eureka:
+      client: 
+         serviceUrl: 
+            defaultZone: http://localhost:8761/eureka/
       
 spring:
   application:
@@ -20,9 +20,11 @@ spring:
   cloud:
     discovery:
       enabled: false
+  main:
+    allow-bean-definition-overriding: true #当遇到同样名字的时候，是否允许覆盖注册
 
 server:
-  port: 3002
+  port: 30101
   
   
 jwt:
