@@ -1,11 +1,6 @@
 package com.stock.controller;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.stock.dto.LoginDto;
-import com.stock.entity.User;
-import com.stock.security.jwt.JWTFilter;
-import com.stock.security.jwt.TokenProvider;
-import com.stock.service.UserService;
+import javax.validation.Valid;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -17,10 +12,14 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.stock.dto.LoginDto;
+import com.stock.entity.User;
+import com.stock.security.jwt.JWTFilter;
+import com.stock.security.jwt.TokenProvider;
+import com.stock.service.UserService;
 
 /**
  * Controller to authenticate users.

@@ -29,9 +29,9 @@ public class UserController {
 	  user.setPassword(password);
 	  char type = userVO.getUserType();
 	  if ('1' == type) {
-		  user.setUserType(UserType.USER);
-	  } else {
 		  user.setUserType(UserType.ADMIN);
+	  } else {
+		  user.setUserType(UserType.USER);
 	  }
 	  user.setEmail(userVO.getEmail());
 	  user.setMobile(userVO.getMobile());
@@ -40,7 +40,7 @@ public class UserController {
 	  return userRepository.save(user);
   }
   
-  @PutMapping
+  @PutMapping(path="/update")
   public void saveUser(@RequestBody User user) {
 	  this.userRepository.save(user);
   }
